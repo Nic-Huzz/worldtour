@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Rise x Indie Campers — European Tour 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #1a1a1a;
+      --border: #222;
+      --text: #f0f0f0;
+      --text-muted: #888;
+      --accent: #c850f0;
+      --accent-2: #ff6b9d;
+      --gradient: linear-gradient(135deg, #c850f0, #ff6b9d);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    /* Sections */
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      position: relative;
+    }
+
+    .inner {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    p, li {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+    }
+
+    .hero h1 {
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Duo Section */
+    .duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .duo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .duo-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 2px solid var(--border);
+    }
+
+    .duo-card h3 {
+      margin-bottom: 4px;
+    }
+
+    .duo-card .handle {
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .duo-card p {
+      font-size: 0.95rem;
+    }
+
+    /* Metrics Section */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .metric-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .metric-card .handle {
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .metric-number {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .metric-row span:first-child {
+      color: var(--text-muted);
+    }
+
+    .metric-row span:last-child {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .growth {
+      color: #4ade80 !important;
+    }
+
+    .combined-bar {
+      margin-top: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .combined-bar .metric-number {
+      font-size: clamp(3rem, 6vw, 4rem);
+    }
+
+    .combined-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .combined-stat {
+      text-align: center;
+    }
+
+    .combined-stat .num {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .combined-stat .lbl {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Video Section */
+    .video-section {
+      background: var(--bg);
+    }
+
+    .video-container {
+      margin-top: 32px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+      aspect-ratio: 9/16;
+      max-height: 75vh;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Route Section */
+    .route-list {
+      margin-top: 40px;
+      list-style: none;
+    }
+
+    .route-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .route-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .route-city {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .route-landmark {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Content deliverables */
+    .deliverables {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .deliverable {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .deliverable .num {
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .deliverable .desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Value props */
+    .value-list {
+      list-style: none;
+      margin-top: 32px;
+    }
+
+    .value-list li {
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .value-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+
+    .value-text h3 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .value-text p {
+      font-size: 0.9rem;
+    }
+
+    /* The Ask */
+    .ask-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .ask-box h2 {
+      margin-bottom: 12px;
+    }
+
+    .ask-box p {
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Contact */
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      margin-bottom: 32px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-links .muted {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .jade-note {
+      margin-top: 40px;
+      padding: 20px 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: inline-block;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Production team */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .team-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .team-card .role {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .team-card h3 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .team-card p {
+      font-size: 0.85rem;
+    }
+
+    /* Scroll animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      section { padding: 60px 20px; }
+      .duo-grid, .metrics-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .combined-stats { gap: 24px; }
+      .ask-box { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="inner fade-up">
+      <div class="hero-badge"><span class="dot"></span> July – August 2026</div>
+      <h1><span class="gradient-text">Vibe Rise</span> x Indie Campers</h1>
+      <p>A sober silent disco tour across Europe's most iconic monuments. 8 cities. 100+ people per event. One van. Professionally produced content.</p>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section>
+    <div class="inner fade-up">
+      <span class="label">Who We Are</span>
+      <h2>Experience creators.<br>Not content creators.</h2>
+      <p style="margin-top: 12px; max-width: 600px;">We host Bali's largest sober headset events. Now we're taking the movement across Europe.</p>
+      <div class="duo-grid">
+        <div class="duo-card">
+          <img src="/nic.jpg" alt="Nic Huzz">
+          <h3>Nic Huzz</h3>
+          <span class="handle">@_huzz</span>
+          <p>Founder of Vibe Rise. Bali's largest silent disco operation — 600+ headset fleet, 200+ events over 3 years, 150+ attendees regularly.</p>
+        </div>
+        <div class="duo-card">
+          <h3>Sydney "Spiff"</h3>
+          <span class="handle">@spiffnuggs</span>
+          <p>Co-host, entrepreneur, founder of @copilotthetravelbrand. Travel, wellness, and community builder based in Bali.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section>
+    <div class="inner fade-up">
+      <span class="label">The Metrics</span>
+      <h2>Small following.<br><span class="gradient-text">Massive engagement.</span></h2>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span class="handle">@_huzz</span>
+          <div class="metric-number gradient-text">103K</div>
+          <div class="metric-label">views in 60 days</div>
+          <div class="metric-row">
+            <span>Followers</span>
+            <span>2,806</span>
+          </div>
+          <div class="metric-row">
+            <span>Accounts reached</span>
+            <span class="growth">27K (+621%)</span>
+          </div>
+          <div class="metric-row">
+            <span>Non-follower reach</span>
+            <span>64%</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <span class="handle">@spiffnuggs</span>
+          <div class="metric-number gradient-text">170K</div>
+          <div class="metric-label">views in 60 days</div>
+          <div class="metric-row">
+            <span>Followers</span>
+            <span>9,619</span>
+          </div>
+          <div class="metric-row">
+            <span>Accounts reached</span>
+            <span class="growth">25K (+400%)</span>
+          </div>
+          <div class="metric-row">
+            <span>Non-follower reach</span>
+            <span>31.5%</span>
+          </div>
+        </div>
+      </div>
+      <div class="combined-bar">
+        <div class="metric-number gradient-text">274K</div>
+        <div class="metric-label">combined views in 60 days — 22x our follower count</div>
+        <div class="combined-stats">
+          <div class="combined-stat">
+            <div class="num">12.4K</div>
+            <div class="lbl">Combined Followers</div>
+          </div>
+          <div class="combined-stat">
+            <div class="num">53K</div>
+            <div class="lbl">Accounts Reached</div>
+          </div>
+          <div class="combined-stat">
+            <div class="num growth">+500%</div>
+            <div class="lbl">Avg Growth Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE VIBE WE CREATE -->
+  <section class="video-section">
+    <div class="inner fade-up">
+      <span class="label">The Vibe We Create</span>
+      <h2>200+ events. 150+ people.<br>Bali's largest silent disco.</h2>
+      <p style="margin-top: 12px;">No alcohol. No drugs. Just headphones, music, and strangers becoming friends.</p>
+      <div class="video-container">
+        <video src="/vibe-rise-fest.mp4" playsinline autoplay muted loop></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE TOUR -->
+  <section>
+    <div class="inner fade-up">
+      <span class="label">The Tour</span>
+      <h2>8 cities. 100+ people per city.<br><span class="gradient-text">Europe's most iconic landmarks.</span></h2>
+      <ul class="route-list">
+        <li class="route-item">
+          <span class="route-num">1</span>
+          <div><div class="route-city">Lisbon, Portugal</div><div class="route-landmark">Praca do Comercio — waterfront plaza</div></div>
+        </li>
+        <li class="route-item">
+          <span class="route-num">2</span>
+          <div><div class="route-city">Barcelona, Spain</div><div class="route-landmark">Park Guell terraces / Barceloneta Beach</div></div>
+        </li>
+        <li class="route-item">
+          <span class="route-num">3</span>
+          <div><div class="route-city">Rome, Italy</div><div class="route-landmark">The Colosseum — exterior plaza</div></div>
+        </li>
+        <li class="route-item">
+          <span class="route-num">4</span>
+          <div><div class="route-city">Paris, France</div><div class="route-landmark">Eiffel Tower — Trocadero & Champ de Mars</div></div>
+        </li>
+        <li class="route-item">
+          <span class="route-num">5</span>
+          <div><div class="route-city">Amsterdam, Netherlands</div><div class="route-landmark">Museumplein — Museum Square</div></div>
+        </li>
+        <li class="route-item">
+          <span class="route-num">6</span>
+          <div><div class="route-city">Berlin, Germany</div><div class="route-landmark">Brandenburg Gate — Pariser Platz</div></div>
+        </li>
+        <li class="route-item">
+          <span class="route-num">7</span>
+          <div><div class="route-city">Prague, Czech Republic</div><div class="route-landmark">Old Town Square</div></div>
+        </li>
+        <li class="route-item">
+          <span class="route-num">8</span>
+          <div><div class="route-city">London, UK</div><div class="route-landmark">Tower Bridge — South Bank</div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTENT PLAN -->
+  <section>
+    <div class="inner fade-up">
+      <span class="label">The Content</span>
+      <h2>Every city produces<br><span class="gradient-text">professional content.</span></h2>
+      <div class="deliverables">
+        <div class="deliverable">
+          <div class="num">8–10</div>
+          <div class="desc">Long-form videos (3-5 min each)</div>
+        </div>
+        <div class="deliverable">
+          <div class="num">30–50</div>
+          <div class="desc">Short-form Reels & TikToks</div>
+        </div>
+        <div class="deliverable">
+          <div class="num">50+</div>
+          <div class="desc">Stories & behind-the-scenes</div>
+        </div>
+        <div class="deliverable">
+          <div class="num">3–4</div>
+          <div class="desc">Weeks of continuous content</div>
+        </div>
+      </div>
+
+      <div class="team-grid" style="margin-top: 40px;">
+        <div class="team-card">
+          <div class="role">Hosts</div>
+          <h3>Nic + Spiff</h3>
+          <p>On-camera talent & event hosts</p>
+        </div>
+        <div class="team-card">
+          <div class="role">Production</div>
+          <h3>Travelling Videographer</h3>
+          <p>Professional filming at every stop</p>
+        </div>
+        <div class="team-card">
+          <div class="role">Post-production</div>
+          <h3>Editing Agency</h3>
+          <p>Polished content, fast turnaround</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 32px; text-align: center;">Drone shots at monuments. Split-screen edits. Tourist reactions.<br>The Indie Campers van woven into every piece — arriving at landmarks, parked at golden hour, the home base of the tour.</p>
+    </div>
+  </section>
+
+  <!-- WHAT INDIE CAMPERS GETS -->
+  <section>
+    <div class="inner fade-up">
+      <span class="label">The Partnership</span>
+      <h2>What <span class="gradient-text">Indie Campers</span> gets.</h2>
+      <ul class="value-list">
+        <li>
+          <div class="value-icon">🎬</div>
+          <div class="value-text">
+            <h3>Your van at 8-10 iconic landmarks</h3>
+            <p>Professional content featuring your van at the Eiffel Tower, Colosseum, Brandenburg Gate, and more. Not a scripted ad — a real road trip with real community events.</p>
+          </div>
+        </li>
+        <li>
+          <div class="value-icon">🌍</div>
+          <div class="value-text">
+            <h3>Coverage across your key markets</h3>
+            <p>3-4 weeks of content spanning Portugal, Spain, Italy, France, Netherlands, Germany, Czech Republic, and the UK.</p>
+          </div>
+        </li>
+        <li>
+          <div class="value-icon">📈</div>
+          <div class="value-text">
+            <h3>High-engagement audience</h3>
+            <p>274K views in 60 days. 22x our follower count. Content that reaches far beyond our existing audience, with both accounts in explosive growth.</p>
+          </div>
+        </li>
+        <li>
+          <div class="value-icon">🎧</div>
+          <div class="value-text">
+            <h3>A story people share</h3>
+            <p>100+ people dancing silently at the Colosseum. A van arriving at dawn in Lisbon. Split-screen edits of silence vs music. This is the content people stop scrolling for.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- THE ASK -->
+  <section>
+    <div class="inner fade-up">
+      <span class="label">The Ask</span>
+      <div class="ask-box">
+        <h2>One van. 3–4 weeks.</h2>
+        <p>Pickup in Lisbon, mid-July 2026.<br>That's it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section">
+    <div class="inner fade-up">
+      <h2>Let's make it happen.</h2>
+      <div class="contact-links">
+        <a href="mailto:nichurrell@icloud.com">nichurrell@icloud.com</a>
+        <span class="muted">@_huzz · @spiffnuggs</span>
+        <a href="https://buysilentdiscoheadphones.com">buysilentdiscoheadphones.com</a>
+        <a href="https://links.nichuzz.com">links.nichuzz.com</a>
+      </div>
+      <div class="jade-note">
+        Inspired by <strong>@earthangelfrequencies</strong>' Indie Campers trip — let's go bigger.
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

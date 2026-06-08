@@ -4,9 +4,9 @@
 
 Silent disco walking tours hitting iconic European monuments. Summer 2026. 5-10 countries. Free events, no venue costs, no noise complaints, maximum visual spectacle. 50-200 people walking and dancing between monuments with headphones on.
 
-**Crew**: Nic + girlfriend. Travelling together, hosting together.
+**Crew**: Nic Huzz (@_huzz) + Sydney "Spiff" (@spiffnuggs). Co-hosting together, travelling together.
 
-**Departure**: Flying Boston > Europe around July 10, 2026 (after 4th of July). Tour runs ~3-4 weeks through peak European summer.
+**Departure**: Flying Boston > Europe around July 10, 2026 (after 4th of July). Tour runs 4-6 weeks through peak European summer.
 
 **Format**: Walking tour, not stationary event. Group walks between 2-3 monuments per city, stops for 5-minute dance bursts at each, ends with a longer 20-minute session at a park or beach. The monuments are the content moments. The final session is the real Vibe Rise experience.
 
@@ -17,6 +17,76 @@ Silent disco walking tours hitting iconic European monuments. Summer 2026. 5-10 
 **The content play**: Every single pop-up produces viral-ready content. Split-screen edits (silence outside / music inside), drone shots of 100 people dancing at the Colosseum, reaction videos from tourists. This is founding myth content for the Vibe Rise movement.
 
 **The funnel**: Free event > QR code > FindMyFlow /7-day-challenge > app retention > /create portal for hosts who want to run their own.
+
+---
+
+## Team + Production
+
+**Nic Huzz** (@_huzz) - Founder of Vibe Rise. Host. 2,806 followers, 103K views in 60 days, 27K accounts reached (+621%). Email: Huzz@nichuzz.com
+
+**Sydney "Spiff"** (@spiffnuggs) - Co-host. Founder of @copilotthetravelbrand (world's first travel supplement). 9,619 followers, 170K views in 60 days, 25K accounts reached (+400%).
+
+**Combined**: 12,400 followers, 274K views in 60 days (22x follower count), 53K accounts reached.
+
+**Travelling videographer** - Professional filming at every stop.
+
+**Editing agency** - Post-production, polished content, fast turnaround.
+
+**Event track record**: 200+ events over 3 years. Bali's largest silent disco events with 150+ attendees. 600+ headset fleet.
+
+---
+
+## Supplier Relationship: QuieTune (Headset Manufacturer)
+
+**Contact**: Tina (sales01@quietune.com). Monthly texting relationship for 2+ years.
+
+**Purchase history**: 750+ units over 2.5 years (600 for own fleet, 150 for referred clients).
+
+**Retail target**: 1,000+ units/year (roughly 35 orders of 30) through buysilentdiscoheadphones.com.
+
+**Tour pitch sent (May 2026)**: Requesting 100 units at cost or sponsored for the European tour, plus a formalized purchase contract. Tina forwarding to her supervisor. Pitch framed around wellness market positioning and growing QuieTune's sales through Nic's retail channel.
+
+**Key framing**: Nic is the demand engine (retail), QuieTune is supply chain. Content drives buyers to buysilentdiscoheadphones.com, which drives orders to QuieTune. Not tagging QuieTune in content because buyers should purchase through Nic's site.
+
+---
+
+## Sponsor Pitch: Indie Campers (Campervan)
+
+**Company**: Indie Campers (indiecampers.com). Lisbon-based, 10,000+ van fleet across 15 European countries, 100+ locations. Brand motto: "Shaping the future of travel." Purpose: "Making road travel accessible and effortless for all."
+
+**Contact**: influencer.collaboration@indiecampers.com (dedicated influencer partnerships email).
+
+**Referral**: Jade (@earthangelfrequencies) was recently sponsored by Indie Campers for a trip. Personal friend of Nic's. Key warm-in for the pitch.
+
+**Pitch deck**: Live at https://worldtour-nine.vercel.app. Hosted on Vercel, deployed from GitHub repo Nic-Huzz/worldtour. Spiff (GitHub: spiffnuggs) invited as collaborator.
+
+**The ask**: One campervan for 4-6 weeks, pickup in Lisbon mid-July 2026.
+
+**Brand alignment**: Indie Campers gets people on the road. Vibe Rise gets them alive when they arrive. Both fight the same enemy (passive, disconnected generation). Vibe Rise thesis: empowering expression + safety for a generation that's become "zoombies."
+
+**Pitch strategy (cold email best practices)**:
+1. Find marketing/partnerships contact on LinkedIn, connect 2-3 days before emailing
+2. Send punchy email (~100 words) with link to the deck
+3. Follow up Day 5 with a short event clip
+4. Follow up Day 12 with a nudge
+5. Follow up Day 19 with a closing-the-loop message
+
+---
+
+## Infrastructure
+
+**GitHub**: Nic-Huzz/worldtour (public repo). Spiff (spiffnuggs) invited as collaborator.
+
+**Vercel**: worldtour-nine.vercel.app (pitch deck). Deployed from /public directory. Static HTML site.
+
+**Assets in /public**:
+- index.html (pitch deck)
+- vibe-rise-hero.mp4 (compressed hero promo video, 9.2MB)
+- vibe-rise-fest.mp4 (compressed event video, 7.4MB)
+- nic.jpg (Nic's profile photo)
+- metrics-nic.png, metrics-spiff.png (Instagram insights screenshots)
+
+**Video source files**: /Users/nichuzz/Library/Mobile Documents/com~apple~CloudDocs/Disco/
 
 ---
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vibe Rise x Indie Campers — European Tour 2026</title>
+  <title>Vibe Rise x Indie Campers | European Tour 2026</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -134,9 +134,39 @@
       animation: pulse 2s infinite;
     }
 
+    .hero-video {
+      margin-top: 40px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      aspect-ratio: 9/16;
+    }
+
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.4; }
+    }
+
+    /* Montage Video */
+    .montage-video {
+      margin-top: 32px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .montage-video video {
+      width: 100%;
+      display: block;
     }
 
     /* Duo Section */
@@ -525,9 +555,12 @@
   <!-- HERO -->
   <section class="hero">
     <div class="inner fade-up">
-      <div class="hero-badge"><span class="dot"></span> July – August 2026</div>
+      <div class="hero-badge"><span class="dot"></span> July - August 2026</div>
       <h1><span class="gradient-text">Vibe Rise</span> x Indie Campers</h1>
-      <p>A sober silent disco tour across Europe's most iconic monuments. 8 cities. 100+ people per event. One van. Professionally produced content.</p>
+      <p>The Eiffel Tower. The Colosseum. Brandenburg Gate. 8 of Europe's most iconic monuments. 100+ people dancing in headphones at each one. From the crew behind Bali's largest sober headset events.</p>
+      <div class="hero-video">
+        <video src="/vibe-rise-hero.mp4" playsinline autoplay muted loop></video>
+      </div>
     </div>
   </section>
 
@@ -535,19 +568,22 @@
   <section>
     <div class="inner fade-up">
       <span class="label">Who We Are</span>
-      <h2>Experience creators.<br>Not content creators.</h2>
+      <h2>Experience creators.</h2>
       <p style="margin-top: 12px; max-width: 600px;">We host Bali's largest sober headset events. Now we're taking the movement across Europe.</p>
+      <div class="montage-video">
+        <video src="/nic-spiff-montage.mp4" playsinline autoplay muted loop></video>
+      </div>
       <div class="duo-grid">
         <div class="duo-card">
           <img src="/nic.jpg" alt="Nic Huzz">
           <h3>Nic Huzz</h3>
           <span class="handle">@_huzz</span>
-          <p>Founder of Vibe Rise. Bali's largest silent disco operation — 600+ headset fleet, 200+ events over 3 years, 150+ attendees regularly.</p>
+          <p>Founder of Vibe Rise. Bali's largest silent disco operation. 600+ headset fleet, 200+ events over 3 years, 150+ attendees regularly.</p>
         </div>
         <div class="duo-card">
           <h3>Sydney "Spiff"</h3>
           <span class="handle">@spiffnuggs</span>
-          <p>Co-host, entrepreneur, founder of @copilotthetravelbrand. Travel, wellness, and community builder based in Bali.</p>
+          <p>Co-host and founder of @copilotthetravelbrand, the world's first travel supplement. Based in Bali.</p>
         </div>
       </div>
     </div>
@@ -596,7 +632,7 @@
       </div>
       <div class="combined-bar">
         <div class="metric-number gradient-text">274K</div>
-        <div class="metric-label">combined views in 60 days — 22x our follower count</div>
+        <div class="metric-label">combined views in 60 days. 22x our follower count</div>
         <div class="combined-stats">
           <div class="combined-stat">
             <div class="num">12.4K</div>
@@ -612,6 +648,16 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- THE WHY -->
+  <section>
+    <div class="inner fade-up" style="text-align: center;">
+      <span class="label">The Why</span>
+      <h2 style="max-width: 700px; margin: 0 auto;">Vibe Rise exists to get a generation stuck behind screens <span class="gradient-text">back into their bodies.</span></h2>
+      <p style="margin: 24px auto 0; max-width: 580px; font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.7;">Expression, connection, and safety to be yourself in public.</p>
+      <p style="margin: 32px auto 0; max-width: 580px; font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 600; color: var(--text);">Indie Campers gets people on the road.<br>We get them alive when they arrive.</p>
     </div>
   </section>
 
@@ -635,7 +681,7 @@
       <ul class="route-list">
         <li class="route-item">
           <span class="route-num">1</span>
-          <div><div class="route-city">Lisbon, Portugal</div><div class="route-landmark">Praca do Comercio — waterfront plaza</div></div>
+          <div><div class="route-city">Lisbon, Portugal</div><div class="route-landmark">Praca do Comercio,waterfront plaza</div></div>
         </li>
         <li class="route-item">
           <span class="route-num">2</span>
@@ -643,19 +689,19 @@
         </li>
         <li class="route-item">
           <span class="route-num">3</span>
-          <div><div class="route-city">Rome, Italy</div><div class="route-landmark">The Colosseum — exterior plaza</div></div>
+          <div><div class="route-city">Rome, Italy</div><div class="route-landmark">The Colosseum,exterior plaza</div></div>
         </li>
         <li class="route-item">
           <span class="route-num">4</span>
-          <div><div class="route-city">Paris, France</div><div class="route-landmark">Eiffel Tower — Trocadero & Champ de Mars</div></div>
+          <div><div class="route-city">Paris, France</div><div class="route-landmark">Eiffel Tower,Trocadero & Champ de Mars</div></div>
         </li>
         <li class="route-item">
           <span class="route-num">5</span>
-          <div><div class="route-city">Amsterdam, Netherlands</div><div class="route-landmark">Museumplein — Museum Square</div></div>
+          <div><div class="route-city">Amsterdam, Netherlands</div><div class="route-landmark">Museumplein,Museum Square</div></div>
         </li>
         <li class="route-item">
           <span class="route-num">6</span>
-          <div><div class="route-city">Berlin, Germany</div><div class="route-landmark">Brandenburg Gate — Pariser Platz</div></div>
+          <div><div class="route-city">Berlin, Germany</div><div class="route-landmark">Brandenburg Gate,Pariser Platz</div></div>
         </li>
         <li class="route-item">
           <span class="route-num">7</span>
@@ -663,7 +709,7 @@
         </li>
         <li class="route-item">
           <span class="route-num">8</span>
-          <div><div class="route-city">London, UK</div><div class="route-landmark">Tower Bridge — South Bank</div></div>
+          <div><div class="route-city">London, UK</div><div class="route-landmark">Tower Bridge,South Bank</div></div>
         </li>
       </ul>
     </div>
@@ -676,11 +722,11 @@
       <h2>Every city produces<br><span class="gradient-text">professional content.</span></h2>
       <div class="deliverables">
         <div class="deliverable">
-          <div class="num">8–10</div>
+          <div class="num">8-10</div>
           <div class="desc">Long-form videos (3-5 min each)</div>
         </div>
         <div class="deliverable">
-          <div class="num">30–50</div>
+          <div class="num">30-50</div>
           <div class="desc">Short-form Reels & TikToks</div>
         </div>
         <div class="deliverable">
@@ -688,7 +734,7 @@
           <div class="desc">Stories & behind-the-scenes</div>
         </div>
         <div class="deliverable">
-          <div class="num">3–4</div>
+          <div class="num">3-4</div>
           <div class="desc">Weeks of continuous content</div>
         </div>
       </div>
@@ -711,7 +757,7 @@
         </div>
       </div>
 
-      <p style="margin-top: 32px; text-align: center;">Drone shots at monuments. Split-screen edits. Tourist reactions.<br>The Indie Campers van woven into every piece — arriving at landmarks, parked at golden hour, the home base of the tour.</p>
+      <p style="margin-top: 32px; text-align: center;">Drone shots at monuments. Split-screen edits. Tourist reactions.<br>The Indie Campers van woven into every piece. Arriving at landmarks, parked at golden hour, the home base of the tour.</p>
     </div>
   </section>
 
@@ -725,7 +771,7 @@
           <div class="value-icon">🎬</div>
           <div class="value-text">
             <h3>Your van at 8-10 iconic landmarks</h3>
-            <p>Professional content featuring your van at the Eiffel Tower, Colosseum, Brandenburg Gate, and more. Not a scripted ad — a real road trip with real community events.</p>
+            <p>Professional content featuring your van at the Eiffel Tower, Colosseum, Brandenburg Gate, and more. Not a scripted ad. A real road trip with real community events.</p>
           </div>
         </li>
         <li>
@@ -758,7 +804,7 @@
     <div class="inner fade-up">
       <span class="label">The Ask</span>
       <div class="ask-box">
-        <h2>One van. 3–4 weeks.</h2>
+        <h2>One van. 4-6 weeks.</h2>
         <p>Pickup in Lisbon, mid-July 2026.<br>That's it.</p>
       </div>
     </div>
@@ -769,13 +815,13 @@
     <div class="inner fade-up">
       <h2>Let's make it happen.</h2>
       <div class="contact-links">
-        <a href="mailto:nichurrell@icloud.com">nichurrell@icloud.com</a>
+        <a href="mailto:Huzz@nichuzz.com">Huzz@nichuzz.com</a>
         <span class="muted">@_huzz · @spiffnuggs</span>
         <a href="https://buysilentdiscoheadphones.com">buysilentdiscoheadphones.com</a>
         <a href="https://links.nichuzz.com">links.nichuzz.com</a>
       </div>
       <div class="jade-note">
-        Inspired by <strong>@earthangelfrequencies</strong>' Indie Campers trip — let's go bigger.
+        Inspired by <strong>@earthangelfrequencies</strong>' Indie Campers trip. Let's go bigger.
       </div>
     </div>
   </section>

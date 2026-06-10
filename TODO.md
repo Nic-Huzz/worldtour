@@ -2,11 +2,12 @@
 
 ## Video Edits Needed
 - [ ] Hero promo video: change text overlay from "Vibe Rise Festival This Sunday" to "The Vibe We Create" (editing agency or CapCut/Premiere)
+- [ ] Add Saltwater Cowboy promo videos to "The Vibe We Create" video grid
 
 ## Photos Needed
-- [ ] Add Spiff's profile photo to the deck (duo-card section)
-- [ ] Add event crowd photos throughout the deck (hero background, portfolio grid)
-- [ ] Photo of Nic + Spiff together
+- [x] Add Spiff's profile photo to the deck (duo-card section)
+- [x] Add event crowd photos throughout the deck (collage grid)
+- [x] Photo of Nic + Spiff together
 
 ## Content
 - [ ] Update email in pitch email draft to: influencer.collaboration@indiecampers.com
@@ -15,7 +16,7 @@
 ## Deck Polish
 - [ ] Review on mobile (responsive check)
 - [ ] Consider custom domain instead of worldtour-nine.vercel.app
-- [ ] Add Spiff's profile image to her card (currently no image)
+- [x] Add Spiff's profile image to her card
 
 ## Post-Send
 - [ ] Follow up Day 5 with a short event clip

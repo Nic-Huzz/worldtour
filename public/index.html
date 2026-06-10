@@ -375,7 +375,7 @@
     /* Route Section */
     .route-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       margin-top: 40px;
     }
@@ -615,10 +615,10 @@
         <div>
           <div class="hero-badge"><span class="dot"></span> July - August 2026</div>
           <h1><span class="gradient-text">Vibe Rise</span><br>x Indie Campers</h1>
-          <p>We're bringing the Vibe Rise Movement to Europe. <strong style="color: var(--text);">100+ people dancing at 8 of Europe's most iconic monuments.</strong></p>
+          <p>We're bringing the Vibe Rise Movement to Europe.<br><strong style="color: var(--text);">100+ people dancing at 6 of Europe's most iconic monuments.</strong></p>
         </div>
         <div class="hero-video">
-          <video src="/vibe-rise-hero.mp4" playsinline autoplay muted loop></video>
+          <video src="/vibe-we-create.mp4" playsinline autoplay muted loop></video>
         </div>
       </div>
     </div>
@@ -694,7 +694,16 @@
           <video src="/ev-high.mp4" playsinline autoplay muted loop></video>
         </div>
         <div class="video-grid-item">
-          <video src="/ev-tribe.mp4" playsinline autoplay muted loop></video>
+          <video src="/collage-vibe-tribe.mp4" playsinline autoplay muted loop></video>
+        </div>
+        <div class="video-grid-item">
+          <video src="/ev-boat.mp4" playsinline autoplay muted loop></video>
+        </div>
+        <div class="video-grid-item">
+          <video src="/ev-promo1.mp4" playsinline autoplay muted loop></video>
+        </div>
+        <div class="video-grid-item">
+          <video src="/collage-tables.mp4" playsinline autoplay muted loop></video>
         </div>
       </div>
     </div>
@@ -704,47 +713,37 @@
   <section>
     <div class="inner fade-up">
       <span class="label">The Tour</span>
-      <h2>8 cities. 100+ people per city.<br><span class="gradient-text">Europe's most iconic landmarks.</span></h2>
+      <h2>6 cities. 100+ people per city.<br><span class="gradient-text">Europe's most iconic landmarks.</span></h2>
       <div class="route-grid">
         <div class="route-card">
           <span class="route-num">1</span>
-          <div class="route-city">Lisbon</div>
-          <div class="route-landmark">Praca do Comercio</div>
-        </div>
-        <div class="route-card">
-          <span class="route-num">2</span>
           <div class="route-city">Barcelona</div>
           <div class="route-landmark">La Sagrada Familia</div>
         </div>
         <div class="route-card">
-          <span class="route-num">3</span>
-          <div class="route-city">Rome</div>
-          <div class="route-landmark">The Colosseum</div>
-        </div>
-        <div class="route-card">
-          <span class="route-num">4</span>
+          <span class="route-num">2</span>
           <div class="route-city">Paris</div>
           <div class="route-landmark">Eiffel Tower</div>
         </div>
         <div class="route-card">
-          <span class="route-num">5</span>
+          <span class="route-num">3</span>
           <div class="route-city">Amsterdam</div>
           <div class="route-landmark">Museumplein</div>
         </div>
         <div class="route-card">
-          <span class="route-num">6</span>
+          <span class="route-num">4</span>
           <div class="route-city">Berlin</div>
           <div class="route-landmark">Brandenburg Gate</div>
         </div>
         <div class="route-card">
-          <span class="route-num">7</span>
-          <div class="route-city">Prague</div>
-          <div class="route-landmark">Old Town Square</div>
-        </div>
-        <div class="route-card">
-          <span class="route-num">8</span>
+          <span class="route-num">5</span>
           <div class="route-city">London</div>
           <div class="route-landmark">Big Ben</div>
+        </div>
+        <div class="route-card">
+          <span class="route-num">6</span>
+          <div class="route-city">Copenhagen</div>
+          <div class="route-landmark">Nyhavn</div>
         </div>
       </div>
     </div>
@@ -915,6 +914,22 @@
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Click to toggle audio — hero + vibe we create videos only
+    document.querySelectorAll('.hero-video video, .video-grid-item video').forEach(video => {
+      video.style.cursor = 'pointer';
+      video.addEventListener('click', () => {
+        if (!video.muted) {
+          video.muted = true;
+          return;
+        }
+        // Mute all others
+        document.querySelectorAll('.hero-video video, .video-grid-item video').forEach(v => {
+          v.muted = true;
+        });
+        video.muted = false;
+      });
+    });
   </script>
 
 </body>

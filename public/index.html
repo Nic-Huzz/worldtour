@@ -418,6 +418,72 @@
       .route-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
+    /* Content alternating rows */
+    .content-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .content-row.reverse {
+      direction: rtl;
+    }
+
+    .content-row.reverse > * {
+      direction: ltr;
+    }
+
+    .content-media {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 9/16;
+      max-height: 400px;
+    }
+
+    .content-media.landscape {
+      aspect-ratio: 16/9;
+      max-height: none;
+    }
+
+    .content-media video,
+    .content-media img,
+    .content-media iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content-info .num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .content-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .content-info p {
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .content-row, .content-row.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+    }
+
     /* Content deliverables */
     .deliverables {
       display: grid;
@@ -628,8 +694,8 @@
   <section>
     <div class="inner fade-up">
       <span class="label">Who We Are</span>
-      <h2>Experience creators.</h2>
-      <p style="margin-top: 12px; max-width: 600px;">We host Bali's largest sober headset events. Now we're taking the movement across Europe.</p>
+      <h2>Experience creators.<br>Adventure-driven.</h2>
+      <p style="margin-top: 12px; max-width: 650px;">Nic runs Bali's largest sober headset events. Spiff has spent 8 years travelling the world and building a community of adventure lovers. Together, we're taking the movement across Europe in a van.</p>
       <div class="duo-grid">
         <div class="duo-card">
           <img src="/nic.jpg" alt="Nic Huzz">
@@ -641,7 +707,7 @@
           <img src="/spiff.jpg" alt="Sydney Spiff">
           <h3>Sydney "Spiff"</h3>
           <span class="handle">@spiffnuggs</span>
-          <p>Co-host and founder of @copilotthetravelbrand, the world's first travel supplement. Based in Bali.</p>
+          <p>8 years travelling the world. Built an audience of 10K adventure lovers, then created @copilotthetravelbrand, the world's first travel supplement. Based in Bali.</p>
         </div>
       </div>
       <div class="collage">
@@ -661,7 +727,7 @@
           <img src="/collage-tuktuk-crew.jpg" alt="Crew with decorated tuk tuk">
         </div>
         <div class="collage-item">
-          <video src="/collage-vid3.mp4" playsinline autoplay muted loop></video>
+          <video src="/collage-vid6.mp4" playsinline autoplay muted loop></video>
         </div>
       </div>
     </div>
@@ -671,12 +737,13 @@
   <section>
     <div class="inner fade-up" style="text-align: center;">
       <span class="label">The Why</span>
-      <h2 style="max-width: 700px; margin: 0 auto;">People are numbing themselves with their phones. <span class="gradient-text">We wake them up with headphones.</span></h2>
-      <p style="margin: 24px auto 0; max-width: 580px; font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.7;">Expression, connection, and safety to be yourself in public.</p>
+      <h2 style="max-width: 700px; margin: 0 auto; font-size: clamp(1.4rem, 3vw, 2.2rem);">A generation is too anxious to dance, too numb to feel, too online to connect.</h2>
+      <h2 style="max-width: 700px; margin: 24px auto 0;"><span class="gradient-text">Vibe Rise creates the safety to do all three.</span></h2>
       <p style="margin: 32px auto 0; max-width: 580px; font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 600; color: var(--text);">Indie Campers gets people on the road.<br>We get them alive when they arrive.</p>
       <div style="margin-top: 40px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); max-width: 700px; margin-left: auto; margin-right: auto; aspect-ratio: 16/9;">
-        <video src="/why-video.mp4" playsinline autoplay muted loop style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+        <video src="/why-video2.mp4" playsinline autoplay muted loop style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;"></video>
       </div>
+      <p style="margin-top: 12px; font-size: 0.8rem; color: var(--text-muted); font-style: italic;">Click for volume - no background music required</p>
     </div>
   </section>
 
@@ -684,8 +751,8 @@
   <section class="video-section">
     <div class="inner fade-up">
       <span class="label">The Vibe We Create</span>
-      <h2>200+ events. 150+ people.<br>Bali's largest silent disco.</h2>
-      <p style="margin-top: 12px;">No alcohol. No drugs. Just headphones, music, and strangers becoming friends.</p>
+      <h2>200+ events.<br>Bali's largest silent discos.</h2>
+      <p style="margin-top: 12px;">No alcohol. No drugs. Just headphones, music, and feeling euphoric, naturally.</p>
       <div class="video-grid">
         <div class="video-grid-item">
           <video src="/ev-fest.mp4" playsinline autoplay muted loop></video>
@@ -723,13 +790,13 @@
       <div class="route-grid">
         <div class="route-card">
           <span class="route-num">1</span>
-          <div class="route-city">Barcelona</div>
-          <div class="route-landmark">La Sagrada Familia</div>
+          <div class="route-city">Berlin</div>
+          <div class="route-landmark">Brandenburg Gate</div>
         </div>
         <div class="route-card">
           <span class="route-num">2</span>
-          <div class="route-city">Paris</div>
-          <div class="route-landmark">Eiffel Tower</div>
+          <div class="route-city">Copenhagen</div>
+          <div class="route-landmark">Nyhavn</div>
         </div>
         <div class="route-card">
           <span class="route-num">3</span>
@@ -738,20 +805,93 @@
         </div>
         <div class="route-card">
           <span class="route-num">4</span>
-          <div class="route-city">Berlin</div>
-          <div class="route-landmark">Brandenburg Gate</div>
+          <div class="route-city">Brussels</div>
+          <div class="route-landmark">Atomium</div>
         </div>
         <div class="route-card">
           <span class="route-num">5</span>
-          <div class="route-city">London</div>
-          <div class="route-landmark">Big Ben</div>
+          <div class="route-city">Paris</div>
+          <div class="route-landmark">Eiffel Tower</div>
         </div>
         <div class="route-card">
           <span class="route-num">6</span>
-          <div class="route-city">Copenhagen</div>
+          <div class="route-city">Rome</div>
+          <div class="route-landmark">The Colosseum</div>
           <div class="route-landmark">Nyhavn</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CONTENT PLAN -->
+  <section>
+    <div class="inner fade-up">
+      <span class="label">The Content</span>
+      <h2>Every city produces<br><span class="gradient-text">professional content.</span></h2>
+
+      <div class="team-grid" style="margin-top: 32px;">
+        <div class="team-card">
+          <img src="/team-videographer.jpg" alt="Videographer" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); margin-bottom: 12px;">
+          <div class="role">Production</div>
+          <h3>Travelling Videographer</h3>
+          <p>Professional filming at every stop</p>
+        </div>
+        <div class="team-card">
+          <img src="/team-agency.jpg" alt="Kunj - Monkgrid" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); margin-bottom: 12px;">
+          <div class="role">Post-production</div>
+          <h3>Monkgrid</h3>
+          <p>350+ films delivered. 8 years behind the lens. Cinematic editing and visual storytelling.</p>
+        </div>
+      </div>
+
+      <!-- Row 1: Road trip vlogs -->
+      <div class="content-row" style="margin-top: 32px;">
+        <div class="content-media">
+          <video src="/example-roadtrip.mp4" playsinline autoplay muted loop></video>
+        </div>
+        <div class="content-info">
+          <div class="num">4-8</div>
+          <h3>Road trip vlogs</h3>
+          <p>Van life between cities. Driving shots, cooking in the van, waking up at landmarks. The journey IS the content. Edited by Monkgrid, who specialises in cinematic travel films.</p>
+        </div>
+      </div>
+
+      <!-- Row 2: Behind the scenes (reversed) -->
+      <div class="content-row reverse">
+        <div class="content-media">
+          <video src="/example-bts.mp4" playsinline autoplay muted loop></video>
+        </div>
+        <div class="content-info">
+          <div class="num">Daily</div>
+          <h3>Behind-the-scenes Stories</h3>
+          <p>Life on the road in the van. Daily Stories showing the journey, the team, and the adventure between events.</p>
+        </div>
+      </div>
+
+      <!-- Row 3: Van arrival shots -->
+      <div class="content-row">
+        <div class="content-media landscape">
+          <img src="/mock-paris.jpg" alt="Indie Campers van at the Eiffel Tower">
+        </div>
+        <div class="content-info">
+          <div class="num">6</div>
+          <h3>Van arrival shots</h3>
+          <p>Your van pulling up to each monument at golden hour. The hero shot for your brand at Europe's most iconic landmarks.</p>
+        </div>
+      </div>
+
+      <!-- Row 4: Disco highlight reels -->
+      <div class="content-row">
+        <div class="content-media">
+          <video src="/ev-boat.mp4" playsinline autoplay muted loop></video>
+        </div>
+        <div class="content-info">
+          <div class="num">12-24</div>
+          <h3>Viral event content</h3>
+          <p>Cinematic edits of each silent disco event. Indie Campers tagged and credited in every post and comments.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -780,7 +920,7 @@
           </div>
         </div>
         <div class="metric-card">
-          <img src="/nic.jpg" alt="Nic" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); margin-bottom: 12px;">
+          <img src="/nic-metrics.jpg" alt="Nic" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); margin-bottom: 12px;">
           <span class="handle">@_huzz</span>
           <div class="metric-number gradient-text">103K</div>
           <div class="metric-label">views in 60 days</div>
@@ -819,57 +959,17 @@
     </div>
   </section>
 
-  <!-- CONTENT PLAN -->
-  <section>
-    <div class="inner fade-up">
-      <span class="label">The Content</span>
-      <h2>Every city produces<br><span class="gradient-text">professional content.</span></h2>
-      <div class="team-grid" style="margin-top: 32px;">
-        <div class="team-card">
-          <div class="role">Production</div>
-          <h3>Travelling Videographer</h3>
-          <p>Professional filming at every stop</p>
-        </div>
-        <div class="team-card">
-          <div class="role">Post-production</div>
-          <h3>Editing Agency</h3>
-          <p>Polished content, fast turnaround</p>
-        </div>
-      </div>
-
-      <div class="deliverables" style="margin-top: 24px;">
-        <div class="deliverable">
-          <div class="num">8-10</div>
-          <div class="desc">Disco highlight reels with "Powered by Indie Campers" title card</div>
-        </div>
-        <div class="deliverable">
-          <div class="num">8-10</div>
-          <div class="desc">Road trip vlogs between cities featuring van life, driving shots, and the journey</div>
-        </div>
-        <div class="deliverable">
-          <div class="num">8</div>
-          <div class="desc">Van arrival shots at each monument at golden hour</div>
-        </div>
-        <div class="deliverable">
-          <div class="num">Daily</div>
-          <div class="desc">Behind-the-scenes Stories showing life on the road in the van</div>
-        </div>
-      </div>
-
-      <p style="margin-top: 32px; text-align: center;">Split-screen edits (silence outside, music inside).<br>The Indie Campers van woven into every piece. Parked at golden hour, the home base of the tour.</p>
-    </div>
-  </section>
-
   <!-- WHAT INDIE CAMPERS GETS -->
   <section>
     <div class="inner fade-up">
       <span class="label">The Partnership</span>
       <h2>What <span class="gradient-text">Indie Campers</span> gets.</h2>
+      <p style="margin-top: 16px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">Our audience is adventure-loving travellers, wellness seekers, and experience chasers across Europe. Indie Campers' ideal customer, already gathered in one place.</p>
       <ul class="value-list">
         <li>
           <div class="value-icon">🎬</div>
           <div class="value-text">
-            <h3>Your van at 8-10 iconic landmarks</h3>
+            <h3>Your van at 6 iconic landmarks</h3>
             <p>Professional content featuring your van at the Eiffel Tower, Colosseum, Brandenburg Gate, and more. Not a scripted ad. A real road trip with real community events.</p>
           </div>
         </li>
@@ -877,7 +977,7 @@
           <div class="value-icon">🌍</div>
           <div class="value-text">
             <h3>Coverage across your key markets</h3>
-            <p>3-4 weeks of content spanning Portugal, Spain, Italy, France, Netherlands, Germany, Czech Republic, and the UK.</p>
+            <p>4-6 weeks of content spanning Italy, France, Netherlands, Germany, Belgium, and Denmark.</p>
           </div>
         </li>
         <li>
@@ -891,7 +991,14 @@
           <div class="value-icon">🎧</div>
           <div class="value-text">
             <h3>A story people share</h3>
-            <p>100+ people dancing silently at the Colosseum. A van arriving at dawn in Lisbon. Split-screen edits of silence vs music. This is the content people stop scrolling for.</p>
+            <p>This is the content people stop scrolling for.</p>
+          </div>
+        </li>
+        <li>
+          <div class="value-icon">📣</div>
+          <div class="value-text">
+            <h3>Shout-out to attendees at every event</h3>
+            <p>Every event ends with a shout-out to all attendees, building community and driving shares across their networks. Your brand woven into every post.</p>
           </div>
         </li>
       </ul>
@@ -904,7 +1011,7 @@
       <span class="label">The Ask</span>
       <div class="ask-box">
         <h2>One van. 4-6 weeks.</h2>
-        <p>Pickup in Lisbon, mid-July 2026.<br>That's it.</p>
+        <p>Pickup mid-July 2026.<br>That's it.</p>
       </div>
     </div>
   </section>
@@ -922,7 +1029,7 @@
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
     // Click to toggle audio — hero + vibe we create videos only
-    document.querySelectorAll('.hero-video video, .video-grid-item video').forEach(video => {
+    document.querySelectorAll('.hero-video video, .video-grid-item video, .content-media video, [src="/why-video2.mp4"]').forEach(video => {
       video.style.cursor = 'pointer';
       video.addEventListener('click', () => {
         if (!video.muted) {

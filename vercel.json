@@ -1,4 +1,11 @@
 {
   "buildCommand": null,
-  "outputDirectory": "public"
+  "outputDirectory": "public",
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "stchristophers.nichuzz.com" }],
+      "destination": "/st-christophers.html"
+    }
+  ]
 }
